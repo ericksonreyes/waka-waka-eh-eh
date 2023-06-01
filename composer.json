@@ -1,0 +1,38 @@
+{
+  "name": "ericksonreyes/waka-waka-eh-eh",
+  "license": "Propriety",
+  "type": "project",
+  "require": {
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-openssl": "*",
+    "ext-pdo": "*"
+  },
+  "require-dev": {
+    "behat/behat": "3.6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "QuadX\\": "src/QuadX"
+    },
+    "psr-0": {
+      "QuadX\\": [
+        "src"
+      ]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "spec\\": "tests/spec/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "platform-check": false
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

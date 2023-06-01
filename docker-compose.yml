@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+
+  composer:
+    init: true
+    build:
+      context: .
+      dockerfile: docker/composer.Dockerfile
+    volumes:
+    - './:/var/www/html:delegated'
+    - 'composer_cache:/tmp'
+    tty: true
+    container_name: 'composer'
+
+  php:
+    init: true
+    build:
+      context: .
+      dockerfile: docker/php.Dockerfile
+    volumes:
+    - './:/var/www/html:delegated'
+    tty: true
+    container_name: 'php'
+
+networks:
+  network-ft-finance-api:
+
+
+volumes:
+  elasticsearch_data:
+  opensearch_data:
+  postgres_data:
+  mariadb_data:
+  composer_cache:
+  npm_cache:
+  dynamodb_data:
